@@ -22,6 +22,7 @@ public class Player {
 
     private String firstName;
     private String lastName;
+    private String position;
     private int playerNumber;
     private int points;
     private Integer rebounds;

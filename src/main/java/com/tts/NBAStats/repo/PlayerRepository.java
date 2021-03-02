@@ -14,11 +14,10 @@ public interface PlayerRepository extends CrudRepository<Player, Long> {
     Optional<Player> findById(Long id);
     List<Player> findByFirstName(String firstName);
     List<Player> findByLastName(String lastName);
-    List<Player> findByPoints(int points);
-    List<Player> findByRebounds(int rebounds);
-    List<Player> findByAssists(int assists);
-    List<Player> findBySteals(int steals);
-    List<Player> findByBlocks(int blocks);
+    List<Player> findAllByOrderByPointsDesc();
+    List<Player> findAllByOrderByAssistsDesc();
+    List<Player> findAllByOrderByStealsDesc();
+    List<Player> findAllByOrderByBlocksDesc();
     List<Player> findAllByOrderByReboundsDesc();
 
 //    @Query("SELECT DISTINCT p.name FROM Player p")

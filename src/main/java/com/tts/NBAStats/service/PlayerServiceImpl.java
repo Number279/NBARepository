@@ -39,8 +39,8 @@ public class PlayerServiceImpl implements PlayerService {
     }
 
     @Override
-    public List<Player> findByPoints(int points) {
-        return playerRepository.findByPoints(points);
+    public List<Player> sortByPoints() {
+        return playerRepository.findAllByOrderByPointsDesc();
     }
 
     @Override
@@ -50,18 +50,18 @@ public class PlayerServiceImpl implements PlayerService {
     }
 
     @Override
-    public List<Player> findByAssists(int assists) {
-        return playerRepository.findByAssists(assists);
+    public List<Player> sortByAssists() {
+        return playerRepository.findAllByOrderByAssistsDesc();
     }
 
     @Override
-    public List<Player> findBySteals(int steals) {
-        return playerRepository.findBySteals(steals);
+    public List<Player> sortBySteals() {
+        return playerRepository.findAllByOrderByStealsDesc();
     }
 
     @Override
-    public List<Player> findByBlocks(int blocks) {
-        return playerRepository.findByBlocks(blocks);
+    public List<Player> sortByBlocks() {
+        return playerRepository.findAllByOrderByBlocksDesc();
     }
 
     @Override

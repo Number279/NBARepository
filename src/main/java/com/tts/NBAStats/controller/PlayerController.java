@@ -67,6 +67,25 @@ public class PlayerController {
             return playerService.sortByRebounds();
     }
 
+    @GetMapping("/points")
+    public Iterable<Player> getPoints(){
+        return playerService.sortByPoints();
+    }
+
+    @GetMapping("/assists")
+    public Iterable<Player> getAssists(){
+        return playerService.sortByAssists();
+    }
+
+    @GetMapping("/steals")
+    public Iterable<Player> getSteals(){
+        return playerService.sortBySteals();
+    }
+
+    @GetMapping("/blocks")
+    public Iterable<Player> getBlocks(){
+        return playerService.sortByBlocks();
+    }
 
 
 //    @PostMapping("/player")
