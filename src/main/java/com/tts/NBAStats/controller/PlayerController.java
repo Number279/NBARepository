@@ -67,11 +67,6 @@ public class PlayerController {
             return playerService.sortByRebounds();
     }
 
-    @GetMapping("/points")
-    public Iterable<Player> getPoints(){
-        return playerService.sortByPoints();
-    }
-
     @GetMapping("/assists")
     public Iterable<Player> getAssists(){
         return playerService.sortByAssists();
@@ -85,6 +80,20 @@ public class PlayerController {
     @GetMapping("/blocks")
     public Iterable<Player> getBlocks(){
         return playerService.sortByBlocks();
+    }
+
+    @GetMapping("/points/position")
+    public List<Player> sortByPointsByPosition(@RequestParam(value="position", required = false) String position){
+        if(position!=null){
+            return playerService.sortByPositionByPoints(position);}
+        return playerService.sortByPoints();
+    }
+
+    @GetMapping("/rebounds/position")
+    public List<Player> sortByReboundsByPosition(@RequestParam(value="position", required = false) String position){
+        if(position!=null){
+            return playerService.sortByPositionByRebounds(position);}
+        return playerService.sortByRebounds();
     }
 
 

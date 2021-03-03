@@ -73,4 +73,15 @@ public class PlayerServiceImpl implements PlayerService {
     public void delete(Long id) {
         playerRepository.deleteById(id);
     }
+
+    @Override
+    public List<Player> sortByPositionByPoints(String position){
+        return playerRepository.findAllByPositionOrderByPointsDesc(position);
+    }
+
+    @Override
+    public List<Player> sortByPositionByRebounds(String position){
+        return playerRepository.findAllByPositionOrderByReboundsDesc(position);
+    }
+
 }
