@@ -84,4 +84,19 @@ public class PlayerServiceImpl implements PlayerService {
         return playerRepository.findAllByPositionOrderByReboundsDesc(position);
     }
 
+    @Override
+    public List<Player> sortByPositionByAssists(String position){
+        return playerRepository.findAllByPositionOrderByAssistsDesc(position);
+    }
+
+    @Override
+    public List<Player> sortByPositionBySteals(String position){
+        return playerRepository.findAllByPositionOrderByStealsDesc(position);
+    }
+
+    @Override
+    public List<Player> sortByPositionByBlocks(String position){
+        return playerRepository.findAllByPositionOrderByBlocksDesc(position);
+    }
+
 }

@@ -96,6 +96,27 @@ public class PlayerController {
         return playerService.sortByRebounds();
     }
 
+    @GetMapping("/assists/position")
+    public List<Player> sortByAssistsByPosition(@RequestParam(value="position", required = false) String position){
+        if(position!=null){
+            return playerService.sortByPositionByAssists(position);}
+        return playerService.sortByAssists();
+    }
+
+    @GetMapping("/blocks/position")
+    public List<Player> sortByBlocksByPosition(@RequestParam(value="position", required = false) String position){
+        if(position!=null){
+            return playerService.sortByPositionByBlocks(position);}
+        return playerService.sortByBlocks();
+    }
+
+    @GetMapping("/steals/position")
+    public List<Player> sortByStealsByPosition(@RequestParam(value="position", required = false) String position){
+        if(position!=null){
+            return playerService.sortByPositionBySteals(position);}
+        return playerService.sortBySteals();
+    }
+
 
 //    @PostMapping("/player")
 //    public void createPlayer(@PathVariable(value = "id") Long id, @RequestBody Player player){

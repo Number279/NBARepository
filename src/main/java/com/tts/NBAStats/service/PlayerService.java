@@ -18,6 +18,9 @@ public interface PlayerService {
     List<Player> sortByBlocks();
     List<Player> sortByPositionByPoints(String position);
     List<Player> sortByPositionByRebounds(String position);
+    List<Player> sortByPositionByAssists(String position);
+    List<Player> sortByPositionBySteals(String position);
+    List<Player> sortByPositionByBlocks(String position);
     void save(Player player);
     void delete(Long id);
 }

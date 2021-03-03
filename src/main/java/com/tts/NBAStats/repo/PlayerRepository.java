@@ -21,6 +21,9 @@ public interface PlayerRepository extends CrudRepository<Player, Long> {
     List<Player> findAllByOrderByReboundsDesc();
     List<Player> findAllByPositionOrderByPointsDesc(String position);
     List<Player> findAllByPositionOrderByReboundsDesc(String position);
+    List<Player> findAllByPositionOrderByAssistsDesc(String position);
+    List<Player> findAllByPositionOrderByStealsDesc(String position);
+    List<Player> findAllByPositionOrderByBlocksDesc(String position);
 
 //    @Query("SELECT DISTINCT p.name FROM Player p")
 //    List<String> findDistinctNames();
